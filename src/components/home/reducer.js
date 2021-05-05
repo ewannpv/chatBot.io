@@ -1,6 +1,6 @@
 import { actionsType } from './actions';
-import Person from './class_person';
-import Bot from './class_bot';
+import Person from './classes/class_person';
+import Bot from './classes/class_bot';
 
 const initalState = {
   user: new Person('Guest', 'https://www.iconsdb.com/icons/preview/gray/guest-xxl.png'),

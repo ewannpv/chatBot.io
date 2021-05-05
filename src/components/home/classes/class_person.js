@@ -3,5 +3,6 @@ export default class Person {
     this.name = name;
     this.imageURL = imageURL;
     this.isBot = false;
+    this.lastMessage = null;
   }
 }
