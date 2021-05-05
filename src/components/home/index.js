@@ -1,21 +1,25 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Container } from 'react-bootstrap';
+import { Col, Row, Container } from 'react-bootstrap';
 import HomeHeader from './ui/header';
+import HomeFooter from './ui/footer';
+import PersonsWidget from './ui/persons_widget';
+import MessageInputWidget from './ui/message-input-widget';
 
-const Home = ({ data }) => {
-  const { user } = data;
-  return (
-    <div>
-      <HomeHeader />
-      <Container>
-        <h1>Hello</h1>
-        <b>{user.name}</b>
-      </Container>
-    </div>
-  );
-};
+const Home = () => (
+  <div className="h-100">
+    <HomeHeader />
+    <Container fluid="xl h-100" className="main-content">
+      <Row className="h-100">
+        <Col xs lg="3" className="t m-3 p-0">
+          <PersonsWidget />
+        </Col>
+        <Col>
+          <MessageInputWidget />
+        </Col>
+      </Row>
+    </Container>
+    <HomeFooter />
+  </div>
+);
 
-const mapTopProps = (store) => ({ data: store.chatBot });
-
-export default connect(mapTopProps)(Home);
+export default Home;

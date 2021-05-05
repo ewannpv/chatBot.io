@@ -1,0 +1,22 @@
+html,
+body, #app {
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+.container-xl {
+  max-width: 1800px;
+}
+
+.main-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.avatar-img {
+    width: 100%;
+}
+
+.form-control, .card, .btn {
+  border-radius: 0;
+}

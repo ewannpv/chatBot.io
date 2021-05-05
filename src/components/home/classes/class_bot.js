@@ -1,8 +1,8 @@
 import Person from './class_person';
 
 export default class Bot extends Person {
-  constructor(name, imageURL) {
-    super(name, imageURL, true);
+  constructor(name, imageURL, description) {
+    super(name, imageURL, description);
     this.name = name;
     this.imageURL = imageURL;
     this.isBot = true;

@@ -1,8 +1,9 @@
 export default class Person {
-  constructor(name, imageURL) {
+  constructor(name, imageURL, description) {
     this.name = name;
     this.imageURL = imageURL;
+    this.description = description;
     this.isBot = false;
-    this.lastMessage = null;
+    this.lastMessageDate = '16h20';
   }
 }

@@ -6,7 +6,7 @@ import ParisEventsSearch from './components/paris-events-search';
 import Home from './components/home';
 
 const Routes = () => (
-  <div>
+  <div className="h-100">
     <BrowserRouter>
       <Switch>
         <Route path="/" component={Home} exact />
