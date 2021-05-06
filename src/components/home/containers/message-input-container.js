@@ -9,7 +9,7 @@ const MessageInputContainer = ({ data }) => (
     <Container fluid="xl" className="h-100">
       <Row className="h-100">
         <Col xl={3} />
-        <Col xl={9} className="pr-0">
+        <Col xl={9}>
           <Form>
             <Form.Row>
               <Form.Control placeholder={data.user.name} className="shadow bg-white" />

@@ -22,7 +22,7 @@ const LeftMessage = ({ message, person }) => (
       <Image src={person.imageURL} roundedCircle className="avatar-img" />
     </Col>
     <Col lg="8" className="pl-0">
-      <Card className="message-card pl-4 pr-4 pb-3 mb-3">
+      <Card className="message-card pl-4 pr-4 pb-3 mb-3 shadow">
         <Row className="d-flex justify-content-between mt-2 mb-0">
           <Col>
             <h4>
@@ -51,7 +51,7 @@ const LeftMessage = ({ message, person }) => (
 const RightMessage = ({ message, person }) => (
   <Row className="d-flex justify-content-end">
     <Col lg="8" className="pr-0">
-      <Card className="message-card pl-4 pr-4 pb-3 mb-3 text-white message-card-right">
+      <Card className="message-card pl-4 pr-4 pb-3 mb-3 text-white message-card-right shadow">
         <Row className="d-flex justify-content-between mt-2 mb-0">
           <Col>
             <TimeAgo
@@ -91,12 +91,6 @@ const MessagesContainer = ({ data }) => {
 
   return (
     <Row className="w-100 messages-container">
-      {messages.map((message) => (
-        <MessageFactory message={message} data={data} />
-      ))}
-      {messages.map((message) => (
-        <MessageFactory message={message} data={data} />
-      ))}
       {messages.map((message) => (
         <MessageFactory message={message} data={data} />
       ))}
