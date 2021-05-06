@@ -1,24 +1,26 @@
 import React from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
-import HomeHeader from './ui/header';
-import HomeFooter from './ui/footer';
-import PersonsWidget from './ui/persons_widget';
-import MessageInputWidget from './ui/message-input-widget';
+import HeaderContainer from './containers/header-container';
+import PersonsContainer from './containers/persons-container';
+import MessageInputContainer from './containers/message-input-container';
+import MessagesContainer from './containers/messages-container';
+import FooterContainer from './containers/footer-container';
 
 const Home = () => (
   <div className="h-100">
-    <HomeHeader />
-    <Container fluid="xl h-100" className="main-content">
-      <Row className="h-100">
-        <Col xs lg="3" className="t m-3 p-0">
-          <PersonsWidget />
+    <HeaderContainer />
+    <Container fluid="xl" className="d-flex h-100">
+      <Row className=" d-flex w-100 flex-fill align-items-stretch content ">
+        <Col lg="3" className="d-flex flex-column mt-3 mb-3">
+          <PersonsContainer />
         </Col>
-        <Col>
-          <MessageInputWidget />
+        <Col className="d-flex flex-column mt-3 pr-0 col align-self-end">
+          <MessagesContainer />
+          <MessageInputContainer />
         </Col>
       </Row>
     </Container>
-    <HomeFooter />
+    <FooterContainer />
   </div>
 );
 

@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Navbar, Container } from 'react-bootstrap';
 
-const HomeHeader = ({ data }) => (
+const HeaderContainer = ({ data }) => (
   <Navbar bg="dark" variant="dark" className="fixed-top">
-    <Container fluid="xl h-100">
+    <Container fluid="xl">
       <Navbar.Brand href="#home">
         <img
           alt=""
@@ -33,4 +33,4 @@ const HomeHeader = ({ data }) => (
 
 const mapTopProps = (store) => ({ data: store.chatBot });
 
-export default connect(mapTopProps)(HomeHeader);
+export default connect(mapTopProps)(HeaderContainer);

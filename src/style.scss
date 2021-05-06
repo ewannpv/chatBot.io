@@ -4,19 +4,36 @@ body, #app {
   background-color: whitesmoke;
 }
 
+body {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: absolute;
+}
 .container-xl {
   max-width: 1800px;
 }
 
-.main-content {
-    padding-top: 60px;
-    padding-bottom: 60px;
+.footer-container {
+  position: sticky;
 }
-
 .avatar-img {
     width: 100%;
 }
 
-.form-control, .card, .btn {
-  border-radius: 0;
+.form-control, .btn, .message-card {
+  border-radius: 30px;
+}
+
+.messages-container {
+box-shadow: -5px 0 5px -5px rgba(0,0,0,.15), 5px 0 5px -5px rgba(0,0,0,.15)!important;
+position: relative;
+display: flex;
+}
+
+.message-card-right {
+  background-color: #9ec5fe;
+}
+
+.message-input-container {
+  margin-bottom: 80px;
 }

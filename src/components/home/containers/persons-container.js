@@ -20,7 +20,7 @@ const PersonFactory = ({ person }) => {
     : null;
 
   return (
-    <Card className="p-2 p-0">
+    <Card className="p-2">
       <Row>
         <Col md={3}>
           <Image src={person.imageURL} roundedCircle className="avatar-img" />
@@ -44,14 +44,14 @@ const PersonFactory = ({ person }) => {
   );
 };
 
-const PersonsWidget = ({ data }) => {
+const PersonsContainer = ({ data }) => {
   const { user } = data;
   const { bots } = data;
 
   return (
-    <div className="h-100">
+    <div className="w-100">
       <h3>Members</h3>
-      <div className="shadow bg-white rounded">
+      <div className="shadow bg-white">
         <PersonFactory person={user} />
         {bots.map((person) => (
           <PersonFactory person={person} />
@@ -63,4 +63,4 @@ const PersonsWidget = ({ data }) => {
 
 const mapTopProps = (store) => ({ data: store.chatBot });
 
-export default connect(mapTopProps)(PersonsWidget);
+export default connect(mapTopProps)(PersonsContainer);
