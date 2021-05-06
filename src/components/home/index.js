@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row, Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import HeaderContainer from './containers/header-container';
 import PersonsContainer from './containers/persons-container';
 import MessageInputContainer from './containers/message-input-container';
@@ -9,12 +9,12 @@ import FooterContainer from './containers/footer-container';
 const Home = () => (
   <div className="h-100">
     <HeaderContainer />
-    <Container fluid="xl" className="d-flex h-100">
-      <Row className=" d-flex w-100 flex-fill align-items-stretch content ">
-        <Col lg="3" className="d-flex flex-column mt-3 mb-3">
+    <Container fluid="xl" className="h-100">
+      <Row className="h-100">
+        <Col xs={3} className="left">
           <PersonsContainer />
         </Col>
-        <Col className="d-flex flex-column mt-3 pr-0 col align-self-end">
+        <Col xs={9} className="d-flex flex-column mt-3 pr-0 col align-self-end">
           <MessagesContainer />
           <MessageInputContainer />
         </Col>

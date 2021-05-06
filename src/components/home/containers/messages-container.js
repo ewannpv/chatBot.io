@@ -90,20 +90,29 @@ const MessagesContainer = ({ data }) => {
   const { messages } = data;
 
   return (
-    <div className="w-100 pl-4 pr-4 mt-1 Fmessages-container">
-      {messages.map((message) => (
-        <MessageFactory message={message} data={data} />
-      ))}
-      {messages.map((message) => (
-        <MessageFactory message={message} data={data} />
-      ))}
-      {messages.map((message) => (
-        <MessageFactory message={message} data={data} />
-      ))}
-      {messages.map((message) => (
-        <MessageFactory message={message} data={data} />
-      ))}
+    <div className="h-75">
+      <Row className="w-100 ml-1 mt-4 messages-container">
+        {messages.map((message) => (
+          <MessageFactory message={message} data={data} />
+        ))}
+        {messages.map((message) => (
+          <MessageFactory message={message} data={data} />
+        ))}
+        {messages.map((message) => (
+          <MessageFactory message={message} data={data} />
+        ))}
+        {messages.map((message) => (
+          <MessageFactory message={message} data={data} />
+        ))}
+        {messages.map((message) => (
+          <MessageFactory message={message} data={data} />
+        ))}
+        {messages.map((message) => (
+          <MessageFactory message={message} data={data} />
+        ))}
+      </Row>
     </div>
+
   );
 };
 

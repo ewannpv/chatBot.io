@@ -1,7 +1,11 @@
 html,
 body, #app {
   height: 100%;
+  width: 100%;
   background-color: whitesmoke;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 body {
@@ -26,8 +30,10 @@ body {
 
 .messages-container {
 box-shadow: -5px 0 5px -5px rgba(0,0,0,.15), 5px 0 5px -5px rgba(0,0,0,.15)!important;
-position: relative;
-display: flex;
+max-height: 75vh;
+min-height: 75%;
+overflow: hidden;
+overflow-y: auto; 
 }
 
 .message-card-right {
@@ -35,5 +41,5 @@ display: flex;
 }
 
 .message-input-container {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }

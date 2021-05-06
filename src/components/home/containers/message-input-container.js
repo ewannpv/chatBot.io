@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Col, Form, Button } from 'react-bootstrap';
 
 const MessageInputContainer = ({ data }) => (
-  <Col className="p-1 mt-3 w-100 message-input-container">
+  <Col className="mt-3 pl-0 ml-0 w-100 message-input-container h-25">
     <Form>
       <Form.Row>
         <Form.Control placeholder={data.user.name} className="shadow bg-white" />
