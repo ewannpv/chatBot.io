@@ -18,7 +18,7 @@ const getPerson = (key, data) => {
 
 const LeftMessage = ({ message, person }) => (
   <Row>
-    <Col lg="1" className="pr-1">
+    <Col lg="1" className="pr-1 d-none d-lg-block">
       <Image src={person.imageURL} roundedCircle className="avatar-img" />
     </Col>
     <Col lg="8" className="pl-0">
@@ -74,7 +74,7 @@ const RightMessage = ({ message, person }) => (
         </Card.Body>
       </Card>
     </Col>
-    <Col lg="1" className="pl-1">
+    <Col lg="1" className="pl-1 d-none d-lg-block">
       <Image src={person.imageURL} roundedCircle className="avatar-img" />
     </Col>
   </Row>
@@ -90,29 +90,26 @@ const MessagesContainer = ({ data }) => {
   const { messages } = data;
 
   return (
-    <div className="h-75">
-      <Row className="w-100 ml-1 mt-4 messages-container">
-        {messages.map((message) => (
-          <MessageFactory message={message} data={data} />
-        ))}
-        {messages.map((message) => (
-          <MessageFactory message={message} data={data} />
-        ))}
-        {messages.map((message) => (
-          <MessageFactory message={message} data={data} />
-        ))}
-        {messages.map((message) => (
-          <MessageFactory message={message} data={data} />
-        ))}
-        {messages.map((message) => (
-          <MessageFactory message={message} data={data} />
-        ))}
-        {messages.map((message) => (
-          <MessageFactory message={message} data={data} />
-        ))}
-      </Row>
-    </div>
-
+    <Row className="w-100 messages-container">
+      {messages.map((message) => (
+        <MessageFactory message={message} data={data} />
+      ))}
+      {messages.map((message) => (
+        <MessageFactory message={message} data={data} />
+      ))}
+      {messages.map((message) => (
+        <MessageFactory message={message} data={data} />
+      ))}
+      {messages.map((message) => (
+        <MessageFactory message={message} data={data} />
+      ))}
+      {messages.map((message) => (
+        <MessageFactory message={message} data={data} />
+      ))}
+      {messages.map((message) => (
+        <MessageFactory message={message} data={data} />
+      ))}
+    </Row>
   );
 };
 

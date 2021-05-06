@@ -10,9 +10,10 @@ body, #app {
 
 body {
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 200px;
   position: absolute;
 }
+
 .container-xl {
   max-width: 1800px;
 }
@@ -30,10 +31,16 @@ body {
 
 .messages-container {
 box-shadow: -5px 0 5px -5px rgba(0,0,0,.15), 5px 0 5px -5px rgba(0,0,0,.15)!important;
-max-height: 75vh;
-min-height: 75%;
+height: 100vh;
 overflow: hidden;
-overflow-y: auto; 
+overflow-y: auto;
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.messages-container::-webkit-scrollbar {
+  display: none;
 }
 
 .message-card-right {
@@ -41,5 +48,7 @@ overflow-y: auto;
 }
 
 .message-input-container {
-  margin-bottom: 60px;
+  bottom: 80px;
+  position: fixed;
+
 }
