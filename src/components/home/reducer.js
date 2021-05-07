@@ -14,16 +14,22 @@ const initalState = {
   messages: [new Message('this is a test', 'BOT_1'), new Message('same here', 'BOT_2'), new Message('Thanks both !', 'USER')]
 };
 
-const searchEvent = (action) => {
-  const newState = [...action.data];
-
-  return newState;
+const SendUserMessage = (state, action) => {
+  const messages = [...state.messages];
+  const { user } = state;
+  messages.push(new Message(action.payload.content, 'USER'));
+  user.updateLastMessage();
+  return {
+    ...state,
+    user,
+    messages
+  };
 };
 
 const data = (state = initalState, action) => {
   switch (action.type) {
-    case actionsType.SEARCH_EVENTS:
-      return searchEvent(action);
+    case actionsType.ON_MESSAGE:
+      return SendUserMessage(state, action);
     default:
       return state;
   }

@@ -16,7 +16,6 @@ const initalState = [{
 
 const changeColorContact = (state, action) => {
   const stateUpdated = [...state];
-
   stateUpdated[action.id].checked = !stateUpdated[action.id].checked;
 
   return stateUpdated;

@@ -1,8 +1,8 @@
 export const actionsType = {
-  SEARCH_EVENTS: 'SEARCH_EVENTS'
+  ON_MESSAGE: 'ON_MESSAGE'
 };
 
-export const searchEvents = (data) => ({
-  type: actionsType.SEARCH_EVENTS,
-  data
+export const SendMessage = (content, key) => ({
+  type: actionsType.ON_MESSAGE,
+  payload: { content, key }
 });

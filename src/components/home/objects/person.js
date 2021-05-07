@@ -5,6 +5,10 @@ export default class Person {
     this.description = description;
     this.key = 'USER';
     this.isBot = false;
-    this.lastMessageDate = '16h20';
+    this.lastMessageDate = null;
+  }
+
+  updateLastMessage() {
+    this.lastMessageDate = new Date();
   }
 }

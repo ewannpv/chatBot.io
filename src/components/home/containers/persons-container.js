@@ -5,6 +5,7 @@ import {
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRobot, faUser } from '@fortawesome/free-solid-svg-icons';
+import TimeAgo from 'timeago-react';
 
 const PersonFactory = ({ person }) => {
   const avatarEmoji = person.isBot ? <FontAwesomeIcon icon={faRobot} />
@@ -13,11 +14,24 @@ const PersonFactory = ({ person }) => {
   const lastMessage = person.lastMessageDate
     ? (
       <div>
-        <h6>Last message:</h6>
-        <p>{person.lastMessageDate}</p>
+        <h6 className="mt-0 mb-0">Last activity:</h6>
+        <p>
+          {' '}
+          <TimeAgo
+            datetime={person.lastMessageDate}
+            locale="en_US"
+          />
+        </p>
       </div>
     )
-    : null;
+    : (
+      <div>
+        <h6 className="mt-0 mb-0">Last activity:</h6>
+        <p>
+          none.
+        </p>
+      </div>
+    );
 
   return (
     <Card className="p-2">

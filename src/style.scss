@@ -31,7 +31,9 @@ body {
 
 .messages-container {
 box-shadow: -5px 0 5px -5px rgba(0,0,0,.15), 5px 0 5px -5px rgba(0,0,0,.15)!important;
-height: 100vh;
+height:inherit;
+margin-bottom: 60px;
+display: block;
 overflow: hidden;
 overflow-y: auto;
 -ms-overflow-style: none;  /* IE and Edge */
@@ -50,5 +52,5 @@ scrollbar-width: none;  /* Firefox */
 .message-input-container {
   bottom: 80px;
   position: fixed;
-
+  background-color: transparent;
 }

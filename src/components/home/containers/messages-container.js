@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
   Row,
@@ -65,12 +65,8 @@ const RightMessage = ({ message, person }) => (
             </h4>
           </Col>
         </Row>
-        <Card.Body className="p-0">
+        <Card.Body className="p-0 text-right">
           {message.content}
-          {' '}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias animi minima
-          qui tenetur dolorum repudiandae? Quod veniam id alias recusandae impedit,
-          harum laborum, expedita quibusdam suscipit, dolore repellat error laboriosam.
         </Card.Body>
       </Card>
     </Col>
@@ -86,25 +82,34 @@ const MessageFactory = ({ message, data }) => {
   return <RightMessage message={message} person={person} />;
 };
 
-const MessagesContainer = ({ data }) => {
-  const { messages } = data;
+const MessagesContainer = class MessagesContainer extends Component {
+  constructor() {
+    super();
+    this.state = {};
+    this.chatContainer = React.createRef();
+  }
 
-  return (
-    <Row className="w-100 messages-container">
-      {messages.map((message) => (
-        <MessageFactory message={message} data={data} />
-      ))}
-      {messages.map((message) => (
-        <MessageFactory message={message} data={data} />
-      ))}
-      {messages.map((message) => (
-        <MessageFactory message={message} data={data} />
-      ))}
-      {messages.map((message) => (
-        <MessageFactory message={message} data={data} />
-      ))}
-    </Row>
-  );
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom() {
+    const scroll = this.chatContainer.current.scrollHeight
+      - this.chatContainer.current.clientHeight;
+    this.chatContainer.current.scrollTo(0, scroll);
+  }
+
+  render() {
+    const { data } = this.props;
+    const { messages } = data;
+    return (
+      <Row className="w-100 messages-container align-items-start" ref={this.chatContainer}>
+        {messages.map((message) => (
+          <MessageFactory message={message} data={data} class="message-card" />
+        ))}
+      </Row>
+    );
+  }
 };
 
 const mapTopProps = (store) => ({ data: store.chatBot });

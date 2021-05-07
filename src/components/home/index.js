@@ -11,10 +11,10 @@ const Home = () => (
     <HeaderContainer />
     <Container fluid="xl" className="h-100">
       <Row className="h-100">
-        <Col xl={3} className="left d-none d-lg-block">
+        <Col xl={3} className="d-none d-xl-block">
           <PersonsContainer />
         </Col>
-        <Col xl={9} className="d-flex flex-column mt-1 pr-0 col align-self-end">
+        <Col xl={9} className="d-none d-xl-block h-100">
           <MessagesContainer />
         </Col>
       </Row>
