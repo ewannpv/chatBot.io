@@ -23,13 +23,23 @@ const SendUserMessage = (state, action) => {
   messages.push(new Message(content, 'USER'));
   user.updateLastMessage();
 
+  return {
+    ...state,
+    user,
+    messages
+  };
+};
+
+const SendResponse = (state, action) => {
+  const messages = [...state.messages];
+  const { content } = action.payload;
+
   const { botMessages, bots } = parseMessage(content, [...state.bots]);
   messages.push(...botMessages);
 
   return {
     ...state,
     bots,
-    user,
     messages
   };
 };
@@ -38,6 +48,8 @@ const data = (state = initalState, action) => {
   switch (action.type) {
     case actionsType.ON_MESSAGE:
       return SendUserMessage(state, action);
+    case actionsType.ON_RESPONSE:
+      return SendResponse(state, action);
     default:
       return state;
   }

@@ -3,7 +3,7 @@ import {
   Col, Form, Button, Container, Row
 } from 'react-bootstrap';
 import store from '../../../store';
-import { SendMessage } from '../actions';
+import { SendMessage, SendResponse } from '../actions';
 
 const MessageInputContainer = class MessageInputContainer extends Component {
   constructor() {
@@ -24,6 +24,7 @@ const MessageInputContainer = class MessageInputContainer extends Component {
     const { textInput } = this.state;
     if (!textInput) return;
     store.dispatch(SendMessage(textInput));
+    store.dispatch(SendResponse(textInput));
     this.setState({ textInput: '' });
   }
 
