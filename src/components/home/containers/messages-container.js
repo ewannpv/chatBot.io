@@ -18,10 +18,10 @@ const getPerson = (key, data) => {
 
 const LeftMessage = ({ message, person }) => (
   <Row>
-    <Col lg="1" className="pr-1 d-none d-lg-block">
+    <Col lg="1" className="pr-1 ml-2 d-none d-lg-block">
       <Image src={person.imageURL} roundedCircle className="avatar-img" />
     </Col>
-    <Col lg="8" className="pl-0">
+    <Col lg="8" className="pl-0 col-md-auto">
       <Card className="message-card pl-4 pr-4 pb-3 mb-3 shadow">
         <Row className="d-flex justify-content-between mt-2 mb-0">
           <Col>
@@ -38,10 +38,6 @@ const LeftMessage = ({ message, person }) => (
         </Row>
         <Card.Body className="p-0">
           {message.content}
-          {' '}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias animi minima
-          qui tenetur dolorum repudiandae? Quod veniam id alias recusandae impedit,
-          harum laborum, expedita quibusdam suscipit, dolore repellat error laboriosam.
         </Card.Body>
       </Card>
     </Col>
@@ -70,7 +66,7 @@ const RightMessage = ({ message, person }) => (
         </Card.Body>
       </Card>
     </Col>
-    <Col lg="1" className="pl-1 d-none d-lg-block">
+    <Col lg="1" className="pl-1 mr-2 d-none d-lg-block">
       <Image src={person.imageURL} roundedCircle className="avatar-img" />
     </Col>
   </Row>
@@ -105,7 +101,7 @@ const MessagesContainer = class MessagesContainer extends Component {
     return (
       <Row className="w-100 messages-container align-items-start" ref={this.chatContainer}>
         {messages.map((message) => (
-          <MessageFactory message={message} data={data} class="message-card" />
+          <MessageFactory message={message} data={data} class="message-card" key={message.id} />
         ))}
       </Row>
     );

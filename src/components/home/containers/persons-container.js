@@ -68,7 +68,7 @@ const PersonsContainer = ({ data }) => {
       <div className="shadow bg-white">
         <PersonFactory person={user} />
         {bots.map((person) => (
-          <PersonFactory person={person} />
+          <PersonFactory person={person} key={person.key} />
         ))}
       </div>
     </div>

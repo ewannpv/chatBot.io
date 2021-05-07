@@ -10,6 +10,6 @@ export default class Bot extends Person {
   }
 
   hello() {
-    return `Bonjour, je m'appelle ${this.name}, ravis de rencontrer !`;
+    return `Hello, my name is ${this.name}, ${this.description}`;
   }
 }
