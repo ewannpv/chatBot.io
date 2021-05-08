@@ -2,7 +2,6 @@ import { actionsType } from './actions';
 import Person from './objects/person';
 import Bot from './objects/bot';
 import Message from './objects/message';
-import parseMessage from './actions/message-parser';
 
 const initalState = {
   user: new Person('Ewann', 'src/images/user.png', 'Hehe... Je ne suis pas un bot.'),
@@ -32,14 +31,10 @@ const SendUserMessage = (state, action) => {
 
 const SendResponse = (state, action) => {
   const messages = [...state.messages];
-  const { content } = action.payload;
-
-  const { botMessages, bots } = parseMessage(content, [...state.bots]);
-  messages.push(...botMessages);
-
+  const { message } = action.payload;
+  messages.push(message);
   return {
     ...state,
-    bots,
     messages
   };
 };

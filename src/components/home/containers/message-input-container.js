@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import {
   Col, Form, Button, Container, Row
 } from 'react-bootstrap';
-import store from '../../../store';
-import { SendMessage, SendResponse } from '../actions';
+import { connect } from 'react-redux';
+import { SendMessage } from '../actions';
+import parseMessage from '../actions/message-parser';
 
 const MessageInputContainer = class MessageInputContainer extends Component {
   constructor() {
@@ -19,12 +20,16 @@ const MessageInputContainer = class MessageInputContainer extends Component {
   }
 
   handleClick(e) {
+    const { dispatch } = this.props;
+    const { data } = this.props;
+
     e.preventDefault();
     const { textInput } = this.state;
     if (!textInput) return;
-    store.dispatch(SendMessage(textInput));
-    store.dispatch(SendResponse(textInput));
+    dispatch(SendMessage(textInput));
     this.setState({ textInput: '' });
+
+    parseMessage(data, textInput);
   }
 
   render() {
@@ -55,4 +60,5 @@ const MessageInputContainer = class MessageInputContainer extends Component {
   }
 };
 
-export default MessageInputContainer;
+const mapTopProps = (store) => ({ data: store.chatBot });
+export default connect(mapTopProps)(MessageInputContainer);

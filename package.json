@@ -53,6 +53,7 @@
     "react-router-dom": "^5.0.1",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
-    "timeago-react": "^3.0.2"
+    "timeago-react": "^3.0.2",
+    "url-exist": "^3.0.0"
   }
 }

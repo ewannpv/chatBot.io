@@ -1,19 +1,15 @@
 import Message from '../objects/message';
+import store from '../../../store';
+import { SendResponse } from '../actions';
 
 export const sayHello = (bots) => {
-  const messages = [];
   bots.forEach((bot) => {
-    messages.push(new Message(bot.hello(), bot.key));
-    bot.updateLastMessage();
+    store.dispatch(SendResponse(new Message(bot.hello(), bot.key), bot.key));
   });
-  return messages;
 };
 
 export const sayGoodBye = (bots) => {
-  const messages = [];
   bots.forEach((bot) => {
-    messages.push(new Message('See you soon !', bot.key));
-    bot.updateLastMessage();
+    store.dispatch(SendResponse(new Message('See you soon !', bot.key), bot.key));
   });
-  return messages;
 };

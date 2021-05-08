@@ -8,7 +8,7 @@ export const SendMessage = (content, key) => ({
   payload: { content, key }
 });
 
-export const SendResponse = (content, key) => ({
+export const SendResponse = (message, key) => ({
   type: actionsType.ON_RESPONSE,
-  payload: { content, key }
+  payload: { message, key }
 });
