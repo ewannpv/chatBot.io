@@ -12,7 +12,6 @@ const MessageInputContainer = class MessageInputContainer extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.focusTextInput = this.focusTextInput.bind(this);
   }
 
   handleChange(e) {
@@ -28,26 +27,24 @@ const MessageInputContainer = class MessageInputContainer extends Component {
     this.setState({ textInput: '' });
   }
 
-  focusTextInput() {
-    this.textInput.current.focus();
-  }
-
   render() {
     const { textInput } = this.state;
     return (
-      <Col className="mt-3 pl-0 ml-0 message-input-container">
+      <Col className="mt-3 pl-3 pr-3 message-input-container">
         <Container fluid="xl" className="h-100">
           <Row className="h-100">
             <Col xl={3} />
-            <Col xl={9}>
+            <Col xl={9} className="p-0">
               <Form>
-                <Form.Row>
-                  <Form.Control value={textInput} onChange={this.handleChange} type="text" placeholder="Search" className="shadow bg-white fs-5" />
-                </Form.Row>
-                <Form.Row className="justify-content-end mt-3">
-                  <Button onKeyPress={(e) => e.preventDefault()} onClick={this.handleClick} variant="btn btn-outline-dark btn-lg" type="submit" className="shadow">
-                    Send
-                  </Button>
+                <Form.Row className="d-flex">
+                  <Col className="d-flex">
+                    <Form.Control value={textInput} onChange={this.handleChange} type="text" placeholder="Search" className="bg-white fs-5" />
+                  </Col>
+                  <Col className="input-btn-row p-0">
+                    <Button onKeyPress={(e) => e.preventDefault()} onClick={this.handleClick} variant="btn btn-outline-dark" type="submit">
+                      Send
+                    </Button>
+                  </Col>
                 </Form.Row>
               </Form>
             </Col>

@@ -10,7 +10,7 @@ body, #app {
 
 body {
   padding-top: 60px;
-  padding-bottom: 200px;
+  padding-bottom: 140px;
   position: absolute;
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 .form-control, .btn, .message-card {
-  border-radius: 30px;
+  border-radius: 10px;
 }
 
 .messages-container {
@@ -53,4 +53,8 @@ scrollbar-width: none;  /* Firefox */
   bottom: 80px;
   position: fixed;
   background-color: transparent;
+}
+
+.input-btn-row {
+  flex-grow: inherit;
 }

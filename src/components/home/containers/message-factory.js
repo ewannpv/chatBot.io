@@ -44,7 +44,7 @@ const LeftMessage = ({ message, person }) => (
 );
 
 const RightMessage = ({ message, person }) => (
-  <Row className="d-flex justify-content-md-end">
+  <Row className="d-flex justify-content-end">
     <Col xs="7">
       <Card className="message-card pl-4 pr-4 pb-3 mb-3 text-white message-card-right shadow">
         <Row className="d-flex justify-content-between mt-2 mb-0">
