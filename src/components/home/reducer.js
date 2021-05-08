@@ -32,9 +32,15 @@ const SendUserMessage = (state, action) => {
 const SendResponse = (state, action) => {
   const messages = [...state.messages];
   const { message } = action.payload;
+  const { key } = action.payload;
+  const bots = [...state.bots];
+  bots.forEach((bot) => {
+    if (key === bot.key) { bot.updateLastMessage(); }
+  });
   messages.push(message);
   return {
     ...state,
+    bots,
     messages
   };
 };

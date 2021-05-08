@@ -36,7 +36,6 @@ const getHelp = () => {
           </Row>
           <Row>
             <b>@roger cat tag:cute </b>
-            .
           </Row>
         </Col>
       </Row>
@@ -47,7 +46,6 @@ const getHelp = () => {
           </Row>
           <Row>
             <b>@roger cat says:hello </b>
-            .
           </Row>
         </Col>
       </Row>
@@ -58,7 +56,6 @@ const getHelp = () => {
           </Row>
           <Row>
             <b>@roger cat tag:cute says:hello </b>
-            .
           </Row>
         </Col>
       </Row>
@@ -99,7 +96,7 @@ const handleBot1 = (message, bot) => {
   parsedMessage.forEach((element) => {
     if (element === 'gif') args = args.concat('/gif');
     else if (startsWith(element, 'tag:')) args = args.concat('/'.concat(splitMessage(message, 'tag:')));
-    else if (startsWith(element, 'says:')) args = args.concat('/says/'.concat(splitMessage(element, 'says:')));
+    else if (startsWith(element, 'says:')) args = args.concat('/says/'.concat(splitMessage(message, 'says:')));
   });
   getCat(args);
 };
