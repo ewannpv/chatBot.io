@@ -17,7 +17,7 @@ const getHelp = () => {
       <Row>
         <Col>
           <Row>
-            - cat, Will return a random cat. &nbsp;
+            - cat, will return a random cat. &nbsp;
             <FontAwesomeIcon icon={faCat} />
           </Row>
         </Col>
@@ -25,14 +25,14 @@ const getHelp = () => {
       <Row>
         <Col>
           <Row>
-            - cat gif, Will return a random gif cat \o/. &nbsp;
+            - cat gif, will return a random gif cat \o/. &nbsp;
           </Row>
         </Col>
       </Row>
       <Row>
         <Col>
           <Row>
-            - cat tag:, Will return a random cat with a :tag, e.g:&nbsp;
+            - cat tag:, will return a random cat with a :tag, e.g:&nbsp;
           </Row>
           <Row>
             <b>@roger cat tag:cute </b>
@@ -42,7 +42,7 @@ const getHelp = () => {
       <Row>
         <Col>
           <Row>
-            - cat says:, Will return a random cat saying :text, e.g:&nbsp;
+            - cat says:, will return a random cat saying :text, e.g:&nbsp;
           </Row>
           <Row>
             <b>@roger cat says:hello </b>
@@ -52,7 +52,7 @@ const getHelp = () => {
       <Row>
         <Col>
           <Row>
-            - cat tag: says:, Will return a random cat with a :tag and saying :text, e.g:&nbsp;
+            - cat tag: says:, will return a random cat with a :tag and saying :text, e.g:&nbsp;
           </Row>
           <Row>
             <b>@roger cat tag:cute says:hello </b>

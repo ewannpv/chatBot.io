@@ -1,5 +1,36 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
+import {
+  LineChart, Line, YAxis
+} from 'recharts';
+
+export const CryptoAssetHistoryContainer = ({ data }) => (
+  <Col lg="12">
+    <Row>
+      <h5>
+        {data.id}
+      </h5>
+    </Row>
+    <Row>
+      <h6>
+        Price evolution during the last 24 hours
+      </h6>
+    </Row>
+    <Row className="d-flex">
+      <LineChart
+        height={500}
+        width={1200}
+        data={data}
+        margin={{
+          top: 5, right: 30, left: 20, bottom: 5
+        }}
+      >
+        <Line type="monotone" dataKey="priceUsd" stroke="#8884d8" strokeWidth={4} />
+        <YAxis />
+      </LineChart>
+    </Row>
+  </Col>
+);
 
 export const CryptoAssetsContainer = ({ data }) => (
   <Col lg="12">
@@ -12,8 +43,8 @@ export const CryptoAssetsContainer = ({ data }) => (
           <li>
             Rank:&nbsp;
             {item.rank}
-            {' '}
             &nbsp;-&nbsp;
+            Id:&nbsp;
             <b>
               {item.id}
             </b>
@@ -69,7 +100,7 @@ export const CryptoAssetContainer = ({ data }) => (
         </Row>
         <Row>
           <h6>
-            24h:&nbsp;
+            Variation (24h):&nbsp;
             {data.changePercent24Hr.substring(0, 5)}
             &nbsp;%
           </h6>
