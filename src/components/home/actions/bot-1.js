@@ -78,7 +78,7 @@ const getCat = (args) => {
 
   const url = `https://cataas.com/${args}?uniqueNum=${uniqueNum}`;
   axios.get(url).then(() => {
-    store.dispatch(SendResponse(new Message(<img src={url} alt="" className="w-100" />, 'BOT_1'), 'BOT_1'));
+    store.dispatch(SendResponse(new Message(<img src={url} alt="" className="w-100 img-cat" />, 'BOT_1'), 'BOT_1'));
   }).catch(() => {
     store.dispatch(SendResponse(getCatError(), 'BOT_1'));
   });

@@ -3,28 +3,26 @@ import { connect } from 'react-redux';
 import { Row } from 'react-bootstrap';
 import MessageFactory from './message-factory';
 
+const scrollToBottom = () => {
+  const chat = document.getElementById('messages-container');
+  chat.scrollTop = chat.scrollHeight;
+};
+
 const MessagesContainer = class MessagesContainer extends Component {
   constructor() {
     super();
     this.state = {};
-    this.chatContainer = React.createRef();
   }
 
   componentDidUpdate() {
-    this.scrollToBottom();
-  }
-
-  scrollToBottom() {
-    const scroll = this.chatContainer.current.scrollHeight
-      - this.chatContainer.current.clientHeight;
-    this.chatContainer.current.scrollTo(0, scroll);
+    scrollToBottom();
   }
 
   render() {
     const { data } = this.props;
     const { messages } = data;
     return (
-      <Row className="messages-container align-items-start" ref={this.chatContainer}>
+      <Row className="messages-container align-items-start" id="messages-container">
         {messages.map((message) => (
           <MessageFactory message={message} data={data} class="message-card" key={message.id} />
         ))}

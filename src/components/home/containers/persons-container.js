@@ -42,11 +42,11 @@ const PersonFactory = ({ person }) => {
         <Col md={5}>
           <h5>
             {person.name}
+            &nbsp;
+            {avatarEmoji}
           </h5>
           <p>
             {person.description}
-            {' '}
-            {avatarEmoji}
           </p>
 
         </Col>

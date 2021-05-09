@@ -27,9 +27,8 @@ const MessageInputContainer = class MessageInputContainer extends Component {
     const { textInput } = this.state;
     if (!textInput) return;
     dispatch(SendMessage(textInput));
-    this.setState({ textInput: '' });
-
     parseMessage(data, textInput);
+    this.setState({ textInput: '' });
   }
 
   render() {
@@ -43,7 +42,7 @@ const MessageInputContainer = class MessageInputContainer extends Component {
               <Form>
                 <Form.Row className="d-flex">
                   <Col className="d-flex">
-                    <Form.Control value={textInput} onChange={this.handleChange} type="text" placeholder="Search" className="bg-white fs-5" />
+                    <Form.Control value={textInput} onChange={this.handleChange} type="text" placeholder="Write a message.." className="bg-white fs-5" />
                   </Col>
                   <Col className="input-btn-row p-0">
                     <Button onKeyPress={(e) => e.preventDefault()} onClick={this.handleClick} variant="btn btn-outline-dark" type="submit">
