@@ -3,14 +3,9 @@ import { connect } from 'react-redux';
 import {
   Card, Col, Row, Image
 } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRobot, faUser } from '@fortawesome/free-solid-svg-icons';
 import TimeAgo from 'timeago-react';
 
 const PersonFactory = ({ person }) => {
-  const avatarEmoji = person.isBot ? <FontAwesomeIcon icon={faRobot} />
-    : <FontAwesomeIcon icon={faUser} />;
-
   const lastMessage = person.lastMessageDate
     ? (
       <div>
@@ -42,8 +37,6 @@ const PersonFactory = ({ person }) => {
         <Col md={5}>
           <h5>
             {person.name}
-            &nbsp;
-            {avatarEmoji}
           </h5>
           <p>
             {person.description}

@@ -13,7 +13,7 @@ export const CryptoAssetHistoryContainer = ({ data }) => (
     </Row>
     <Row>
       <h6>
-        Price evolution during the last 24 hours
+        Price evolution during the last 24 hours.
       </h6>
     </Row>
     <Row className="d-flex">
