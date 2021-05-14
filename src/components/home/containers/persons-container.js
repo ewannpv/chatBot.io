@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
   Card, Col, Row, Image
 } from 'react-bootstrap';
@@ -51,10 +51,8 @@ const PersonFactory = ({ person }) => {
   );
 };
 
-const PersonsContainer = ({ data }) => {
-  const { user } = data;
-  const { bots } = data;
-
+const PersonsContainer = () => {
+  const { user, bots } = useSelector((state) => state.chatBot);
   return (
     <div className="w-100">
       <h3>Members</h3>
@@ -68,6 +66,4 @@ const PersonsContainer = ({ data }) => {
   );
 };
 
-const mapTopProps = (store) => ({ data: store.chatBot });
-
-export default connect(mapTopProps)(PersonsContainer);
+export default PersonsContainer;

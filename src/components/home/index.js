@@ -11,7 +11,7 @@ const Home = () => (
     <HeaderContainer />
     <Container fluid="xl" className="h-100">
       <Row className="h-100">
-        <Col xl={3} className="h-100 messages-container">
+        <Col xl={3} className="h-100 users-container">
           <PersonsContainer />
         </Col>
         <Col xl={9} className="h-100">
