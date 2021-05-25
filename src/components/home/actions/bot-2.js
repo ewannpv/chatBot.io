@@ -6,6 +6,8 @@ import { SendResponse } from '../actions';
 import store from '../../../store';
 import { CryptoAssetsContainer, CryptoAssetContainer, CryptoAssetHistoryContainer } from '../containers/crypto-assets-container';
 
+const url = 'https://api.coincap.io/v2/assets';
+
 const getHelp = () => {
   const content = (
     <Col>
@@ -56,8 +58,6 @@ const getMessageError = () => (
 );
 
 const getAssets = () => {
-  const url = 'https://api.coincap.io/v2/assets';
-
   axios.get(url).then((response) => {
     const { data } = response.data;
     store.dispatch(SendResponse(new Message(<CryptoAssetsContainer data={data} />, 'BOT_2')));
@@ -66,24 +66,20 @@ const getAssets = () => {
   });
 };
 
-const getAssetsHistory = (id) => {
-  const url = `https://api.coincap.io/v2/assets/${id}/history?interval=d1`;
-
-  axios.get(url).then((response) => {
+const getAssetsById = (id) => {
+  axios.get(`${url}/${id}`).then((response) => {
     const { data } = response.data;
-    data.id = id;
-    store.dispatch(SendResponse(new Message(<CryptoAssetHistoryContainer data={data} />, 'BOT_2')));
+    store.dispatch(SendResponse(new Message(<CryptoAssetContainer data={data} />, 'BOT_2')));
   }).catch(() => {
     store.dispatch(SendResponse(getMessageError(), 'BOT_2'));
   });
 };
 
-const getAssetsById = (id) => {
-  const url = `https://api.coincap.io/v2/assets/${id}`;
-
-  axios.get(url).then((response) => {
+const getAssetsHistory = (id) => {
+  axios.get(`${url}/${id}/history?interval=d1`).then((response) => {
     const { data } = response.data;
-    store.dispatch(SendResponse(new Message(<CryptoAssetContainer data={data} />, 'BOT_2')));
+    data.id = id;
+    store.dispatch(SendResponse(new Message(<CryptoAssetHistoryContainer data={data} />, 'BOT_2')));
   }).catch(() => {
     store.dispatch(SendResponse(getMessageError(), 'BOT_2'));
   });
