@@ -13,3 +13,9 @@ export const sayGoodBye = (bots) => {
     store.dispatch(SendResponse(new Message('See you soon !', bot.key), bot.key));
   });
 };
+
+export const sayPong = (bots) => {
+  bots.forEach((bot) => {
+    store.dispatch(SendResponse(new Message('pong', bot.key), bot.key));
+  });
+};
