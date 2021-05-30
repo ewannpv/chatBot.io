@@ -40,7 +40,7 @@ export const CryptoAssetsContainer = ({ data }) => (
     <ul>
       {
         data.map((item) => (
-          <li>
+          <li key={item.id}>
             Rank:&nbsp;
             {item.rank}
             &nbsp;-&nbsp;

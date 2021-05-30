@@ -10,15 +10,15 @@ const scrollToBottom = () => {
 
 export const BeerFactory = ({ data }) => (
   data.map((item) => (
-    <Row>
-      <Col xs="4">
+    <Row key={item.id}>
+      <Col xl="4">
         <Image src={item.image_url} onLoad={scrollToBottom} fluid />
       </Col>
-      <Col xs="8">
+      <Col xl="8">
         <Card className="message-card pl-4 pr-4 pb-3 mb-3 shadow">
           <Row className="d-flex justify-content-between mt-2 mb-0">
             <h4>
-              {item.name}
+              {item.id}
             </h4>
           </Row>
           <Row className="d-flex justify-content-between mt-2 mb-0">
@@ -57,7 +57,7 @@ export const BeersList = ({ data }) => (
     <ul>
       {
         data.map((item) => (
-          <li>
+          <li key={item.id}>
             Name:&nbsp;
             {item.name}
             &nbsp;-&nbsp;
@@ -122,7 +122,7 @@ export const BeersByAbv = ({ data, abv }) => (
     <ul>
       {
         data.map((item) => (
-          <li>
+          <li key={item.id}>
             Name:&nbsp;
             {item.name}
             &nbsp;-&nbsp;
