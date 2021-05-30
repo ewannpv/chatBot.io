@@ -73,12 +73,17 @@ const getCatError = () => (
   )
 );
 
+const scrollToBottom = () => {
+  const chat = document.getElementById('messages-container');
+  chat.scrollTop = chat.scrollHeight;
+};
+
 const getCat = (args) => {
   const uniqueNum = Math.random();
 
   const url = `https://cataas.com/${args}?uniqueNum=${uniqueNum}`;
   axios.get(url).then(() => {
-    store.dispatch(SendResponse(new Message(<img src={url} alt="" className="w-100 img-cat" />, 'BOT_1'), 'BOT_1'));
+    store.dispatch(SendResponse(new Message(<img src={url} alt="" onLoad={scrollToBottom} className="w-100" />, 'BOT_1'), 'BOT_1'));
   }).catch(() => {
     store.dispatch(SendResponse(getCatError(), 'BOT_1'));
   });

@@ -3,11 +3,16 @@ import {
   Row, Col, Image, Card
 } from 'react-bootstrap';
 
+const scrollToBottom = () => {
+  const chat = document.getElementById('messages-container');
+  chat.scrollTop = chat.scrollHeight;
+};
+
 export const BeerFactory = ({ data }) => (
   data.map((item) => (
     <Row>
       <Col xs="4">
-        <Image src={item.image_url} fluid />
+        <Image src={item.image_url} onLoad={scrollToBottom} fluid />
       </Col>
       <Col xs="8">
         <Card className="message-card pl-4 pr-4 pb-3 mb-3 shadow">

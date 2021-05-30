@@ -11,7 +11,8 @@ const initalState = {
     new Bot('Pedro', 'src/images/bot3.png', 'If you\'r looking for some beers, ping me!', 'BOT_3'),
     new Bot('John', 'src/images/bot4.png', 'If you need help, just ping me as well.', 'BOT_4')
   ],
-  messages: []
+  messages: [],
+  imgLoaded: false
 };
 
 const SendUserMessage = (state, action) => {

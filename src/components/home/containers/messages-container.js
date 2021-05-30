@@ -11,10 +11,10 @@ const scrollToBottom = () => {
 const MessagesContainer = () => {
   const data = useSelector((state) => state.chatBot);
   const { messages } = data;
-
+  const { imgLoaded } = data;
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, imgLoaded]);
 
   return (
     <Row className="messages-container align-items-start" id="messages-container">
