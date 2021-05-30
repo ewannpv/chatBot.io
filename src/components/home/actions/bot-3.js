@@ -60,7 +60,7 @@ const getMessageError = () => (
   new Message(
     <p>
       Hm.. do you need help ? write:&nbsp;
-      <b>@maria help</b>
+      <b>@pedro help</b>
     </p>, 'BOT_3'
   )
 );
@@ -116,10 +116,10 @@ const handleBot3 = (message, bot) => {
       if (parsedMessage[2] === 'random') getRandomBeer();
       else if (startsWith(parsedMessage[2], 'id:')) getBeerById(splitMessage(parsedMessage[2], 'id:'));
       else if (startsWith(parsedMessage[2], 'abv:')) getBeerByAbv(splitMessage(parsedMessage[2], 'abv:'));
-      else SendResponse(getMessageError(), 'BOT_3');
+      else store.dispatch(SendResponse(getMessageError(), 'BOT_3'));
       break;
     default:
-      SendResponse(getMessageError(), 'BOT_3');
+      store.dispatch(SendResponse(getMessageError(), 'BOT_3'));
       break;
   }
 };

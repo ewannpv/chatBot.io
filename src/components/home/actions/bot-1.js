@@ -96,12 +96,11 @@ const handleBot1 = (message, bot) => {
     store.dispatch(SendResponse(getHelp(), 'BOT_1'));
     return;
   }
-
   let args = 'cat';
   parsedMessage.forEach((element) => {
     if (element === 'gif') args = args.concat('/gif');
-    else if (startsWith(element, 'tag:')) args = args.concat('/'.concat(splitMessage(message, 'tag:')));
-    else if (startsWith(element, 'says:')) args = args.concat('/says/'.concat(splitMessage(message, 'says:')));
+    else if (startsWith(element, 'tag:')) args = args.concat('/'.concat(splitMessage(element, 'tag:')));
+    else if (startsWith(element, 'says:')) args = args.concat('/says/'.concat(splitMessage(element, 'says:')));
   });
   getCat(args);
 };

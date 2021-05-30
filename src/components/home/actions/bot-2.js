@@ -102,10 +102,10 @@ const handleBot2 = (message, bot) => {
       break;
     case 4:
       if (parsedMessage[3] === 'history') getAssetsHistory(parsedMessage[2]);
-      else SendResponse(getMessageError(), 'BOT_2');
+      else store.dispatch(SendResponse(getMessageError(), 'BOT_2'));
       break;
     default:
-      SendResponse(getMessageError(), 'BOT_2');
+      store.dispatch(SendResponse(getMessageError(), 'BOT_2'));
       break;
   }
 };

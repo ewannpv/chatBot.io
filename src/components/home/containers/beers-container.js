@@ -95,16 +95,29 @@ export const RandomBeer = ({ data }) => (
 );
 
 export const BeerById = ({ data }) => (
-  <Col lg="12">
-    <Row>
-      <h5>
-        {' '}
-        {data[0].name}
-        {' '}
-      </h5>
-    </Row>
-    <BeerFactory data={data} />
-  </Col>
+  data.length
+    ? (
+      <Col lg="12">
+        <Row>
+          <h5>
+            {' '}
+            {data[0].name}
+            {' '}
+          </h5>
+        </Row>
+        <BeerFactory data={data} />
+      </Col>
+    )
+    : (
+      <Col lg="12">
+        <Row>
+          <h5>
+            This beer doesn&apos;t exist.
+          </h5>
+        </Row>
+      </Col>
+    )
+
 );
 
 export const BeersByAbv = ({ data, abv }) => (
