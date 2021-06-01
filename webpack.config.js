@@ -1,17 +1,17 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const devMode = process.env.NODE_ENV !== 'production'
+const devMode = process.env.NODE_ENV !== 'production';
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
   template: './src/index.html',
   filename: './index.html'
-})
+});
 
 const miniCssExtractPlugin = new MiniCssExtractPlugin({
   filename: '[name].css',
   chunkFilename: '[id].css'
-})
+});
 
 module.exports = {
   module: {
@@ -20,13 +20,14 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
-            {loader :'babel-loader'},
-            {loader :'eslint-loader',
-              options: {
-                failOnError: true
-              }
+          { loader: 'babel-loader' },
+          {
+            loader: 'eslint-loader',
+            options: {
+              failOnError: true
             }
-          ]
+          }
+        ]
       },
       {
         test: /\.(c|sa|sc)ss$/,
@@ -45,7 +46,7 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    host: '127.0.0.1',
+    host: '0.0.0.0',
     port: 8080
   },
   output: {
@@ -55,4 +56,4 @@ module.exports = {
     htmlWebpackPlugin,
     miniCssExtractPlugin
   ]
-}
+};
