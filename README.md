@@ -11,7 +11,7 @@ git clone https://github.com/ewannpv/chatBot.io.git
 install deps:
 ```
 cd chatBot.io
-npm install -g
+npm install
 ```
 
 start the node server:
