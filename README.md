@@ -23,10 +23,28 @@ npm run start
 
 #### Roger
 Roger can display cute cat images, here is what he can exactly do:
-⋅⋅* cat, will return a random cat.
-⋅⋅* cat tag:, will return a random cat with a :tag, e.g: 
-⋅⋅⋅ ``` @roger cat tag:cute ```
-⋅⋅* cat says:, will return a random cat saying :text, e.g:
-⋅⋅⋅ ``` @roger cat says:hello ```
-⋅⋅*  cat tag: says:, will return a random cat with a :tag and saying :text, e.g:
-⋅⋅⋅ ``` @roger cat tag:cute says:hello ```
+1. cat, will return a random cat.
+2. cat tag:, will return a random cat with a :tag, e.g: 
+``` @roger cat tag:cute ```
+3. cat says:, will return a random cat saying :text, e.g:
+ ``` @roger cat says:hello ```
+4. cat tag: says:, will return a random cat with a :tag and saying :text, e.g:
+ ``` @roger cat tag:cute says:hello ```
+ 
+ #### Maria
+ Maria can track lot of cryptocurrencies, here is what can she do:
+ 1. assets, will return the list of supported assets.
+ 2. assets :id, will return the asset details associated with the given :id, e.g:
+ ``` @maria assets bitcoin ```
+ 3. assets :id history, will return price evolution during the last 24 hours associated with the given :id, e.g:
+``` @maria assets bitcoin history ```
+
+#### Pedro
+Pedro knows every beers that exist, here is what he can do:
+1. beers, will return the first 50 beers we have.
+2. beers random, will return a random beer;
+3. beers id:id, will return the beer matching the given id.
+``` @pedro beers id:2 ```
+4. beers abv:abv, will return all beers with ABV greater than the supplied number.
+``` @pedro beers abv:11 ```
+
