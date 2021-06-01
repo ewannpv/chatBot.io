@@ -48,3 +48,6 @@ Pedro knows every beers that exist, here is what he can do:
 4. beers abv:abv, will return all beers with ABV greater than the supplied number.
 ``` @pedro beers abv:11 ```
 
+#### John
+John is here to help yopu if you have any problem, he'll always display the same message.
+
