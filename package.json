@@ -1,5 +1,5 @@
 {
-  "name": "@so-xzen/my-react",
+  "name": "@ewannpvn/chatbot.io",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xzen/my-react.git"
+    "url": "git+https://github.com/ewannpv/chatBot.io"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xzen/my-react/issues"
+    "url": "https://github.com/ewannpv/chatBot.io/issues"
   },
-  "homepage": "https://github.com/xzen/my-react#readme",
+  "homepage": "https://github.com/ewannpv/chatBot.io#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -54,7 +54,6 @@
     "recharts": "^2.0.9",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
-    "timeago-react": "^3.0.2",
-    "url-exist": "^3.0.0"
+    "timeago-react": "^3.0.2"
   }
 }
