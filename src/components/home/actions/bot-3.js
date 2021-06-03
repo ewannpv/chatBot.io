@@ -46,8 +46,7 @@ const getBeers = () => {
   });
 };
 
-const handleBot3 = (message, bot) => {
-  bot.updateLastMessage();
+const handleBot3 = (message) => {
   const parsedMessage = message.split(' ');
   if (parsedMessage.length === 0 || parsedMessage[1] !== 'beers') {
     store.dispatch(SendResponse(getHelpBot3(), 'BOT_3'));

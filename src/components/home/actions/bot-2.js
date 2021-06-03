@@ -36,8 +36,7 @@ const getAssetsHistory = (id) => {
   });
 };
 
-const handleBot2 = (message, bot) => {
-  bot.updateLastMessage();
+const handleBot2 = (message) => {
   const parsedMessage = message.split(' ');
   if (parsedMessage.length === 0 || parsedMessage[1] !== 'assets') {
     store.dispatch(SendResponse(getHelpBot2(), 'BOT_2'));

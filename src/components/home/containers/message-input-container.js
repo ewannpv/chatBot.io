@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   Col, Form, Button, Container, Row
 } from 'react-bootstrap';
@@ -12,7 +12,6 @@ const MessageInputContainer = () => {
     textInput: ''
   });
 
-  const data = useSelector((storeState) => storeState.chatBot);
   const handleChange = (e) => {
     setState({ textInput: e.target.value });
   };
@@ -22,7 +21,7 @@ const MessageInputContainer = () => {
     const { textInput } = state;
     if (!textInput) return;
     dispatch(SendMessage(textInput));
-    parseMessage(data, textInput);
+    parseMessage(textInput);
     setState({ textInput: '' });
   };
 
