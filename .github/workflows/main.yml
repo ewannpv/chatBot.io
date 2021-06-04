@@ -2,10 +2,11 @@ name: CI to Docker Hub
 
 on:
   push:
-    branches: [ docker ]
+    branches:
+      - docker
   pull_request:
-    branches: [ docker ]
-
+    branches:
+      - docker
   workflow_dispatch:
 
 jobs:
