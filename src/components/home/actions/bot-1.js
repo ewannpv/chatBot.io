@@ -22,8 +22,7 @@ const getCat = (args) => {
   });
 };
 
-const handleBot1 = (message, bot) => {
-  bot.updateLastMessage();
+const handleBot1 = (message) => {
   const parsedMessage = message.split(' ');
   if (parsedMessage.length === 0 || parsedMessage[1] !== 'cat') {
     store.dispatch(SendResponse(getHelpBot1(), 'BOT_1'));
