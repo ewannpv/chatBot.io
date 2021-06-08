@@ -2,6 +2,7 @@
 
 ## Preview
 ![alt text](https://github.com/ewannpv/chatBot.io/blob/main/src/images/preview.png "chatBot.io preview")
+http://45.9.188.143:8080/
 
 ### Installation
 clone the repo:
