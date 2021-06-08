@@ -9,6 +9,8 @@ clone the repo:
 ```
 git clone https://github.com/ewannpv/chatBot.io.git
 ```
+
+#### Node server
 install deps:
 ```
 cd chatBot.io
@@ -18,6 +20,19 @@ npm install
 start the node server:
 ```
 npm run start
+```
+
+#### Docker
+```
+cd chatBot.io
+```
+Build docker image:
+```
+docker build . -t ewannpv/chatbot.io
+```
+Launch docker image:
+```
+docker run -p 8080:8080 -d ewannpv/chatbot.io
 ```
 
 ### Bots
