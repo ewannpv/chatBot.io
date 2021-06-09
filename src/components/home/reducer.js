@@ -52,6 +52,8 @@ const data = (state = initalState, action) => {
       return SendUserMessage(state, action);
     case actionsType.ON_RESPONSE:
       return SendResponse(state, action);
+    case actionsType.INIT:
+      return initalState;
     default:
       return state;
   }
