@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`footer renders correctly 1`] = `
+<footer>
+  <nav
+    className="navbar navbar-expand navbar-dark bg-dark fixed-bottom"
+  >
+    <div
+      className="container-xl"
+    >
+      <div
+        className="navbar-nav"
+        onKeyDown={[Function]}
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="https://github.com/ewannpv"
+          href="https://github.com/ewannpv"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          Github
+        </a>
+      </div>
+    </div>
+  </nav>
+</footer>
+`;

@@ -1,6 +1,9 @@
+import React from 'react';
+import renderer from 'react-test-renderer';
 import store from '../store';
 import { sayHello } from '../components/home/actions/all-bots';
 import { SendMessage, Init } from '../components/home/actions';
+import FooterContainer from '../components/home/containers/footer-container';
 
 beforeEach(() => {
   store.dispatch(Init());
@@ -33,4 +36,11 @@ test('sendMessage', () => {
   const { messages } = store.getState().chatBot;
   expect(messages[0].content).toBe('test');
   expect(messages[0].key).toBe('USER');
+});
+
+it('footer renders correctly', () => {
+  const tree = renderer
+    .create(<FooterContainer />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 });
