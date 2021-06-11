@@ -32,9 +32,9 @@ This CI is triggered on push & pull requests.
 # Runing chatBot.io online
 We decided to run our react app on a VPS. This allowed us to add new DevOps  features:
 - daily cron script
--- pull new docker image
--- send GitHub notifications
--- store logs about the docker image upade
+- pull new docker image
+- send GitHub notifications
+- store logs about the docker image upade
 - store logs about the server state
 
 ## web app: dev.ewannpv.com
